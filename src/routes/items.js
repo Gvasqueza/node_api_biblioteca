@@ -1,11 +1,12 @@
 const express = require('express');
 const itemSchema = require('../models/items.js');
 const multer = require('multer');
+const upload = require('../librerias/storage');
 const router = express.Router();
 
-// Configure Multer for buffer storage
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+// // Configure Multer for buffer storage
+// const storage = multer.memoryStorage();
+// const upload = multer({ storage });
 
 // POST item with image and content
 router.post("/items", upload.fields([
